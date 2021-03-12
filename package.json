@@ -1,0 +1,26 @@
+{
+  "name": "SiteOne",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashaikevich/siteone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sashaikevich/siteone/issues"
+  },
+  "homepage": "https://github.com/sashaikevich/siteone#readme",
+  "dependencies": {
+    "webpack": "^5.25.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.5.0"
+  }
+}
