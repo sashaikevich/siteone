@@ -4,7 +4,8 @@ module.exports = {
   entry: './front/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundled.js'
+    filename: 'bundled.js',
+    publicPath: "/build/",
   },
   module: {
     rules: [
@@ -19,6 +20,13 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'url?limit=10000&name=[name].[ext]?[hash:7]',
+          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+        ]
+      }
     ],
   },
   devServer: {

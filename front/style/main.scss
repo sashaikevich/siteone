@@ -1,18 +1,66 @@
-html, body {
+html,
+body {
   height: 100%;
   padding: 0;
   margin: 0;
 }
+
 body {
-  .svg-wrapper {
+  .content {
     height: 100%;
     display: grid;
     align-content: center;
-    svg {
-      width: 60%;
-      display: block;
-      margin: 0 auto;
-    }
 
+    .logo-wrapper {
+      position: relative;
+      margin: 0 auto;
+      width: 70%;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        display: block;
+        padding-top: 37.95498071%;
+      }
+
+      .svg-layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        svg {
+          display: block;
+          margin: 0 auto;
+
+          .st1 {
+            mix-blend-mode: multiply;
+          }
+        }
+      }
+
+      .img-bg-wrapper {
+        position: absolute;
+        height: 100%;
+        right: 0;
+        left: 60%;
+        background-image:url('~./logo-bg.jpeg');
+        // background-image:url('http://localhost:3002/dist/logo-bg.jpeg');
+        background-size: cover;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(121, 183, 210, 0.598);
+        }
+      }
+
+    }
   }
 }
