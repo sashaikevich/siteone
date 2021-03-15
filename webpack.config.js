@@ -4,8 +4,7 @@ module.exports = {
   entry: './front/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundled.js',
-    publicPath: "/build/",
+    filename: 'bundled.js'
   },
   module: {
     rules: [
@@ -21,11 +20,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'url?limit=10000&name=[name].[ext]?[hash:7]',
-          'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
-        ]
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       }
     ],
   },
