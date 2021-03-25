@@ -7,11 +7,12 @@ body {
 }
 
 body {
+  display: grid;
+  align-content: center;
+  overflow: hidden;
+
   .content {
     height: 100%;
-    display: grid;
-    align-content: center;
-    overflow: hidden;
     visibility: hidden;
     opacity: 0;
 
@@ -74,8 +75,10 @@ body {
     }
 
     .redirection-wrapper {
+      position: absolute;
       opacity: 0;
-      margin-top: 0;
+      margin: 0 auto;
+      width: 100%;
       text-align: center;
       transition: opacity 500ms ease-out;
 
@@ -83,28 +86,11 @@ body {
         opacity: 1;
       }
 
-      .auto-redirect {
-        opacity: 0;
-        visibility: hidden;
-        &.visible {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-      .manual-redirect {
-        opacity: 0;
-        visibility: hidden;
-        &.visible {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
-
       .progress-bar-wrapper {
         border: 1px solid #0681B5;
         width: 50%;
         max-width: 200px;
-        margin: 0 auto;
+        margin: 0 auto 0.5em;
         height: 6px;
         position: relative;
 
@@ -123,6 +109,21 @@ body {
           animation-duration: 6s;
           animation-timing-function: linear;
           animation-fill-mode: forwards;
+        }
+      }
+
+      .go-to-gram {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: rgb(71, 78, 85);
+        &:hover {
+          color: #0681B5;
+        }
+        .fab {
+          font-size: 2em;
+          margin-left: 0.35em;
         }
       }
     }

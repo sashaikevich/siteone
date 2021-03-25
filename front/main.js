@@ -1,5 +1,7 @@
 import './style/main.scss'
 
+const instalink = "https://www.instagram.com/SiteOneGroup";
+
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 
@@ -17,15 +19,17 @@ window.addEventListener('load', () => {
     redWrap.classList.add('visible');
     redWrap.appendChild(cancelEl);
     redirectTimeout = setTimeout(() => {
-      // window.location.href = "http://www.instagram.com";
-      console.log('redirect');
+      window.location.href = instalink;
+      // console.log('redirect');
     }, 6000) // equals animation duration (6s)
   }, 3000) // equals animation delay
 
   function cancelRedirection(e) {
     e.preventDefault();
-    document.querySelector('.auto-redirect').classList.remove('visible')
-    document.querySelector('.manual-redirect').classList.add('visible')
+    document.querySelector('.progress-bar-wrapper').remove();
+    cancelEl.remove();
+    document.querySelector('.auto-redirect').innerHTML = `<a class="go-to-gram" href=${instalink}>check out our <i class="fab fa-instagram fa-lg"></i></a>`;
+
     clearTimeout(redirectTimeout);
   }
 
