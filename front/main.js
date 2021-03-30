@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
   const cancelEl = document.createElement('a');
   cancelEl.innerText = "cancel";
   cancelEl.setAttribute("href", "#");
+  cancelEl.id = "cancel"
   cancelEl.addEventListener('click', cancelRedirection);
 
 
@@ -28,7 +29,7 @@ window.addEventListener('load', () => {
     e.preventDefault();
     document.querySelector('.progress-bar-wrapper').remove();
     cancelEl.remove();
-    document.querySelector('.auto-redirect').innerHTML = `<a class="go-to-gram" href=${instalink}>check out our <i class="fab fa-instagram fa-lg"></i></a>`;
+    document.querySelector('.auto-redirect').innerHTML = `<a class="go-to-gram" href=${instalink}>visit our <i class="fab fa-instagram fa-lg"></i></a>`;
 
     clearTimeout(redirectTimeout);
   }
