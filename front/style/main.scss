@@ -118,8 +118,11 @@ body {
         }
       }
 
-      #cancel:hover {
-        text-decoration: none;
+      #cancel{
+        &:hover {
+          text-decoration: none;
+          color: #0681B5;
+        }
       }
       .go-to-gram {
         display: flex;
